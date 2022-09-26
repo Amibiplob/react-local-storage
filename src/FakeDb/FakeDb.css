@@ -1,16 +1,22 @@
 .fakedata{
      display: grid;
-     grid-template-columns: repeat(2 , 1fr);
+     grid-template-columns: repeat(4 , 1fr);
      grid-gap: 10px;
-     padding: 20px;
      margin: 20px;
 }
 .data{
     border: solid 3px grey;
     border-radius: 20px;
+    padding-left: 20px;
 }
 .data button{
     padding: 5px;
-    border-radius: 10px;
-    margin: 10px;
+    margin-bottom: 15px;
+    width: 90%;
 }
+@media only screen and (max-width: 768px) {
+    .fakedata{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+   }
+  }

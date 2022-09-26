@@ -1,0 +1,51 @@
+.history{
+    text-align: center;
+}
+.history hr{
+    width: 80%;
+    border: solid 1px yellowgreen;
+}
+.history-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.history-data:hover {
+  background-color: #ddd;
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.history-data button{
+    color: red;
+    border: solid 2px orange;
+    padding: 10px 20px;
+}
+.history-data button:hover{
+  background-color: orange;
+  color: whitesmoke;
+}
+
+/* .history-data {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+  }
+   */
+  .history-data td, .history-data th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  
+  .history-data tr:hover {background-color: #ddd;}
+  
+  .history-data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
