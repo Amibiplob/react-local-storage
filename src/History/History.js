@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './History.css'
-const History = (props) => {
- //   console.log(props)
- //   let local = localStorage.getItem()
+const History = () => {
+    //   console.log(props)
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        const items = JSON.parse(localStorage.getItem('user'));
+        if (items) {
+            setItems(items);
+        }
+    }, []);
+
+    // console.log(items)
     let count = 1;
+
+    const remove= () => {
+       localStorage.clear('user');
+        window.location.reload();
+      };
+
+
+
     return (
         <div>
             <div className='history'>
@@ -11,21 +28,27 @@ const History = (props) => {
                 <h1>History</h1>
                 <hr />
             </div>
-            <div className='history-data'>
-                <div>
-                    <h2>{count} : </h2>
+
+
+
+            {items.map(data => (
+
+                <div className='history-data'>
+                    <div>
+                        <h2>{count++} : </h2>
+                    </div>
+                    <div>
+                        <h4>
+                            {data.id}
+                        </h4>
+                    </div>
+                    <div>
+                        <button onClick={remove}>
+                            Remove All
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <h4>
-                        632eff5f2d97fdb6affbd544
-                    </h4>
-                </div>
-                <div>
-                    <button>
-                        Remove
-                    </button>
-                </div>
-            </div>
+                ))}
         </div>
     );
 };

@@ -10,7 +10,7 @@ const FakeDb = () => {
     }, [])
     const addLocal = (props) => {
         addToLocal(props)
-        console.log(props)
+     //   console.log(props)
     }
     const removeLocal = (props) => {
         removeFromLocal(props)
@@ -29,8 +29,8 @@ const FakeDb = () => {
                         <p>
                             id : {data.id}
                         </p>
-                        <button onClick={() => addLocal(data.id)}>Add To Local Stroage</button>
-                        <button onClick={() => removeLocal(data.id)}>Remove From Local Stroage</button>
+                        <button onClick={() => addLocal(data)}>Add To Local Storage</button>
+                        <button onClick={() => removeLocal(data)}>Remove From Local Storage</button>
                     </div>
                 ))
             }
